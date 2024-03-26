@@ -1,1 +1,3 @@
-import axios from "axios";
+import { AxiosService } from "./client";
+
+export const axiosClient = new AxiosService();
