@@ -2,10 +2,10 @@ import { useState } from "react";
 
 const INITIAL_PAGE = 1;
 
-export const usePagination = (hasMore: boolean) => {
+export const usePagination = () => {
   const [pageNumber, setPageNumber] = useState(INITIAL_PAGE);
 
-  const onNextPage = () => {
+  const onNextPage = (hasMore: boolean) => {
     if (hasMore) {
       setPageNumber((currentPage) => currentPage + 1);
     }

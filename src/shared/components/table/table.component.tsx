@@ -6,20 +6,18 @@ import {
   TableRow,
   TableCell,
   TableBody,
+  Box,
 } from "@mui/material";
-import { Pagination } from "..";
+import { Tag } from "../../services/api/tags/types";
 
-export const Table = () => {
+export interface TableProps {
+  Pagination?: React.ElementType;
+  items: Tag[];
+}
+
+export const Table = ({ Pagination, items }: TableProps) => {
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
-      {/* <TablePagination
-        count={2}
-        onPageChange={() => {}}
-        page={1}
-        rowsPerPage={1}
-        component="div"
-      /> */}
-      <Pagination />
       <TableContainer>
         <MuiTable stickyHeader aria-label="sticky table">
           <TableHead>
@@ -32,16 +30,31 @@ export const Table = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow>
-              <TableCell>javascript</TableCell>
-              <TableCell>214562</TableCell>
-              <TableCell>False</TableCell>
-              <TableCell>False</TableCell>
-              <TableCell>False</TableCell>
-            </TableRow>
+            {items.map(
+              ({
+                name,
+                count,
+                has_synonyms,
+                is_moderator_only,
+                is_required,
+              }) => {
+                return (
+                  <TableRow>
+                    <TableCell>{name}</TableCell>
+                    <TableCell>{count}</TableCell>
+                    <TableCell>{has_synonyms ? "True" : "False"}</TableCell>
+                    <TableCell>
+                      {is_moderator_only ? "True" : "False"}
+                    </TableCell>
+                    <TableCell>{is_required ? "True" : "False"}</TableCell>
+                  </TableRow>
+                );
+              }
+            )}
           </TableBody>
         </MuiTable>
       </TableContainer>
+      {Pagination && <Pagination />}
     </Paper>
   );
 };

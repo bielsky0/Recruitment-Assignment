@@ -82,7 +82,7 @@ export const Layout = ({ children }: LayoutProps) => {
           </Toolbar>
         </Container>
       </AppBar>
-      <Container maxWidth="md" sx={{ paddingTop: 6 }}>
+      <Container maxWidth="md" sx={{ marginTop: 6, marginBottom: 6 }}>
         {children}
       </Container>
     </>

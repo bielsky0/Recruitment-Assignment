@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import { App } from "./app.component";
 import React from "react";
 import { CssBaseline } from "@mui/material";
+import { ReactQueryProvider } from "./providers";
 
 const render = () => {
   const container = document.getElementById("root");
@@ -11,10 +12,10 @@ const render = () => {
 
   root.render(
     <React.StrictMode>
-      {/* <ThemeProvider theme={theme}> */}
-      <CssBaseline />
-      <App />
-      {/* </ThemeProvider> */}
+      <ReactQueryProvider>
+        <CssBaseline />
+        <App />
+      </ReactQueryProvider>
     </React.StrictMode>
   );
 };
