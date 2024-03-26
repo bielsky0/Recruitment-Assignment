@@ -1,16 +1,5 @@
-import { useEffect } from "react";
-import { tagsService } from "../shared/services/api";
+import { Layout } from "../shared/components";
 
 export const App = () => {
-  useEffect(() => {
-    tagsService
-      .getTags()
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  return <>Mediporta</>;
+  return <Layout>Mediporta</Layout>;
 };
