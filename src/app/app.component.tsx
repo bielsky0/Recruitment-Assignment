@@ -1,5 +1,10 @@
 import { Layout } from "../shared/components";
+import { Tags } from "../views/tags";
 
 export const App = () => {
-  return <Layout>Mediporta</Layout>;
+  return (
+    <Layout>
+      <Tags />
+    </Layout>
+  );
 };

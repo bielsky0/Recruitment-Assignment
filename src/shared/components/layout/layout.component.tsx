@@ -7,8 +7,8 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
+
 import { Logo } from "../logo";
 
 export interface LayoutProps {
@@ -82,7 +82,9 @@ export const Layout = ({ children }: LayoutProps) => {
           </Toolbar>
         </Container>
       </AppBar>
-      <Container maxWidth="xl">{children}</Container>
+      <Container maxWidth="md" sx={{ paddingTop: 6 }}>
+        {children}
+      </Container>
     </>
   );
 };
