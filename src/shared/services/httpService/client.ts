@@ -9,18 +9,15 @@ import { logger } from "../logger";
 
 export class AxiosService {
   private http: AxiosInstance;
-  private baseURL = "stackoverflow";
+  private baseURL = "https://api.stackexchange.com/2.3/";
 
   constructor() {
     this.http = axios.create({
       baseURL: this.baseURL,
       withCredentials: false,
     });
-  }
-  public service() {
-    this.injectInterceptors();
 
-    return this;
+    this.injectInterceptors();
   }
 
   public async get<T>(

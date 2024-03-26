@@ -1,3 +1,1 @@
-import { AxiosService } from "./client";
-
-export const axiosClient = new AxiosService();
+export * from "./tags";
