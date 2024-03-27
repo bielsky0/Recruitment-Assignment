@@ -1,27 +1,17 @@
-import { Pagination, Table } from "../../shared/components";
-import { usePagination, useTagsQuery } from "../../shared/hooks";
+import { Box } from "@mui/material";
+import { TagsTable, TagsFilters } from "./components";
 
 export const Tags = () => {
-  const { pageNumber, onNextPage, onPreviousPage } = usePagination();
-  const { data, isFetching } = useTagsQuery(pageNumber);
-
-  if (isFetching) return <>cycu</>;
-
-  if (!data) return <>no data</>;
-
-  const { items, hasMore } = data;
-
   return (
-    <Table
-      items={items}
-      Pagination={() => (
-        <Pagination
-          currentPage={pageNumber}
-          onNextPage={onNextPage}
-          onPreviousPage={onPreviousPage}
-          hasMore={hasMore}
-        />
-      )}
-    />
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
+      }}
+    >
+      <TagsFilters />
+      <TagsTable />
+    </Box>
   );
 };

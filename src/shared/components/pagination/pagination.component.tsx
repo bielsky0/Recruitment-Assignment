@@ -29,6 +29,7 @@ export const Pagination = ({
       </IconButton>
       <Typography component="span">{currentPage}</Typography>
       <IconButton
+        disabled={!hasMore}
         onClick={() => {
           onNextPage(hasMore);
         }}

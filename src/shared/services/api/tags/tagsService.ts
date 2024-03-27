@@ -10,7 +10,7 @@ export class TagsService {
         items: Tag[];
         has_more: boolean;
       }>(
-        `tags?page=${page}&order=desc&sort=popular&site=stackoverflow&key=rzL)B9GRLKBp8vQsT4vmag((`
+        `tags?page=${page}&pagesize=8&order=desc&sort=popular&site=stackoverflow&key=rzL)B9GRLKBp8vQsT4vmag((`
       );
 
       const requiredFields = ["count", "name"];

@@ -3,6 +3,7 @@ import { App } from "./app.component";
 import React from "react";
 import { CssBaseline } from "@mui/material";
 import { ReactQueryProvider } from "./providers";
+import { TagsFilterProvider } from "../contexts";
 
 const render = () => {
   const container = document.getElementById("root");
@@ -13,8 +14,10 @@ const render = () => {
   root.render(
     <React.StrictMode>
       <ReactQueryProvider>
-        <CssBaseline />
-        <App />
+        <TagsFilterProvider>
+          <CssBaseline />
+          <App />
+        </TagsFilterProvider>
       </ReactQueryProvider>
     </React.StrictMode>
   );
