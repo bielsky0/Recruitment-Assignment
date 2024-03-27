@@ -1,9 +1,10 @@
-import { createRoot } from "react-dom/client";
-import { App } from "./app.component";
 import React from "react";
+import { createRoot } from "react-dom/client";
 import { CssBaseline } from "@mui/material";
-import { ReactQueryProvider } from "./providers";
-import { TagsFilterProvider } from "../contexts";
+
+import { App } from "src/app";
+import { ReactQueryProvider } from "src/app/providers";
+import { TagsFilterProvider } from "src/contexts";
 
 const render = () => {
   const container = document.getElementById("root");

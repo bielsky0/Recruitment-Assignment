@@ -1,10 +1,10 @@
 import { useCallback, useContext } from "react";
-import { TagsFilterContext } from "../../../contexts";
+import { TagsFilterContext } from "src/contexts";
 import {
   Order,
   ReducerActions,
   Sort,
-} from "../../../contexts/tagsFilter/tagsFilter.types";
+} from "src/contexts/tagsFilter/tagsFilter.types";
 
 export const useTagsFilter = () => {
   const context = useContext(TagsFilterContext);

@@ -1,6 +1,6 @@
 import { InputAdornment, TextField } from "@mui/material";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
-import { useTagsFilter } from "../../../../shared/hooks/useTagsFilter";
+import { useTagsFilter } from "src/shared/hooks/useTagsFilter";
 
 export const TagsPageSize = () => {
   const { pageSize, updatePageSize } = useTagsFilter();

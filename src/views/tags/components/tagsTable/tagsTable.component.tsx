@@ -1,8 +1,8 @@
-import { useTagsQuery } from "../../../../shared/hooks";
-import { EmptyTable, Table } from "../../../../shared/components";
-import { useTagsFilter } from "../../../../shared/hooks/useTagsFilter";
-import { TableSkeleton, TagsPagination } from "..";
-import { TABLE_HEADERS } from "../..";
+import { useTagsQuery } from "src/shared/hooks";
+import { EmptyTable, Table } from "src/shared/components";
+import { useTagsFilter } from "src/shared/hooks/useTagsFilter";
+import { TableSkeleton, TagsPagination } from "src/views/tags/components";
+import { TABLE_HEADERS } from "src/views/tags/tags.constants";
 import { TableCell, TableRow } from "@mui/material";
 
 export const TagsTable = () => {

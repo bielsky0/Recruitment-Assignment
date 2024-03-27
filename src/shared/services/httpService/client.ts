@@ -5,7 +5,7 @@ import axios, {
   AxiosError,
 } from "axios";
 import { HttpMethod } from "./types";
-import { logger } from "../logger";
+import { logger } from "src/shared/services/logger";
 
 export class AxiosService {
   private http: AxiosInstance;

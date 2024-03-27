@@ -6,8 +6,8 @@ import {
   Select,
   SelectChangeEvent,
 } from "@mui/material";
-import { useTagsFilter } from "../../../../shared/hooks/useTagsFilter";
-import { Order } from "../../../../contexts/tagsFilter/tagsFilter.types";
+import { useTagsFilter } from "src/shared/hooks/useTagsFilter";
+import { Order } from "src/contexts/tagsFilter/tagsFilter.types";
 
 export const TagsOrder = () => {
   const { order, updateOrder } = useTagsFilter();

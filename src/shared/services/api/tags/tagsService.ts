@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
-import { removeFields } from "../../../utils";
-import { axiosClient } from "../../httpService";
+import { removeFields } from "src/shared/utils";
+import { axiosClient } from "src/shared/services/httpService";
 import {
   FieldValidationError,
   FieldValidationErrorCodes,

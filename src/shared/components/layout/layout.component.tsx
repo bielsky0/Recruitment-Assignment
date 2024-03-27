@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-import { Logo } from "../logo";
+import { Logo } from "src/shared/components/logo";
 
 export interface LayoutProps {
   children: React.ReactNode;

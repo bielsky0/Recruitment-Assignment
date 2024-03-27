@@ -1,5 +1,5 @@
 import { Component, ErrorInfo, ReactNode } from "react";
-import { logger } from "../../services";
+import { logger } from "src/shared/services";
 import { Alert } from "@mui/material";
 
 interface Props {

@@ -1,5 +1,10 @@
 import { Box } from "@mui/material";
-import { TagsSearchbox, TagsPageSize, TagsOrder, TagsSort } from "..";
+import {
+  TagsSearchbox,
+  TagsPageSize,
+  TagsOrder,
+  TagsSort,
+} from "src/views/tags/components";
 
 export const TagsFilters = () => {
   return (

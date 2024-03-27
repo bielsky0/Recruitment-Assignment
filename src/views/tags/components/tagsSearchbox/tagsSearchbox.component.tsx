@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { TextField, InputAdornment } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { useTagsFilter } from "../../../../shared/hooks/useTagsFilter";
-import { useState } from "react";
-import { useDebounce } from "../../../../shared/hooks";
+
+import { useDebounce, useTagsFilter } from "src/shared/hooks";
 
 export const TagsSearchbox = () => {
   const { updateSearch } = useTagsFilter();

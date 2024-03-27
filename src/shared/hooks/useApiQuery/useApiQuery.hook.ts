@@ -1,9 +1,10 @@
 import { QueryKey, UseQueryOptions, useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
+
 import {
   FieldValidationError,
   TagsApiError,
-} from "../../services/api/tags/tags.errors";
+} from "src/shared/services/api/tags/tags.errors";
 
 export const useApiQuery = <
   TQueryFnData = unknown,

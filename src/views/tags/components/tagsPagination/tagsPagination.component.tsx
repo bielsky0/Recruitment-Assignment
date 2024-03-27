@@ -1,5 +1,5 @@
-import { Pagination } from "../../../../shared/components";
-import { useTagsFilter } from "../../../../shared/hooks/useTagsFilter";
+import { Pagination } from "src/shared/components";
+import { useTagsFilter } from "src/shared/hooks/useTagsFilter";
 
 export interface TagsPaginationProps {
   hasMore: boolean;
