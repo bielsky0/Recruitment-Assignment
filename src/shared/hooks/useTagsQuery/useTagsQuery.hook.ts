@@ -14,6 +14,5 @@ export const useTagsQuery = (params: TagsParams) => {
     ],
     queryFn: () => tagsService.getTags(params),
   });
-
   return { status, data, error, isFetching };
 };

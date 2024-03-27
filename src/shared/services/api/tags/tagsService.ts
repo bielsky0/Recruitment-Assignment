@@ -1,3 +1,4 @@
+import { removeFields } from "../../../utils";
 import { axiosClient } from "../../httpService";
 import { UncheckedTag, Tag, TagsParams } from "./types";
 
@@ -6,6 +7,7 @@ export class TagsService {
     params: TagsParams
   ): Promise<{ items: Tag[]; hasMore: boolean }> {
     try {
+      removeFields(params);
       const response = await axiosClient.get<{
         items: Tag[];
         has_more: boolean;
@@ -17,7 +19,8 @@ export class TagsService {
 
       response.items.forEach((uncheckedTag: UncheckedTag) => {
         requiredFields.forEach((field) => {
-          if (!uncheckedTag[field]) throw new Error(`No ${field} field`);
+          if (uncheckedTag[field] === undefined)
+            throw new Error(`No ${field} field`);
         });
       });
 
