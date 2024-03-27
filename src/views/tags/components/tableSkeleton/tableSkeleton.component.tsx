@@ -12,7 +12,7 @@ export const TableSkeleton = () => {
       <Skeleton variant="rectangular" width="100%" height={36} />
       <Skeleton variant="rectangular" width="100%" height={36} />
       <Skeleton variant="rectangular" width="100%" height={36} />
-      <Box sx={{ display: "flex", gap: 1 }}>
+      <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
         <Skeleton variant="circular" width={40} height={40} />
         <Skeleton variant="rectangular" width={32} height={32} />
         <Skeleton variant="circular" width={40} height={40} />

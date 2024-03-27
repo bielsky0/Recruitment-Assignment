@@ -13,11 +13,12 @@ export const TagsFilters = () => {
         display: "flex",
         gap: 2,
         width: "100%",
+        flexDirection: { xs: "column", md: "row" },
         justifyContent: "space-between",
       }}
     >
       <TagsSearchbox />
-      <Box sx={{ display: "flex", gap: 2 }}>
+      <Box sx={{ display: "flex", gap: 2, width: { xs: "100%", md: "unset" } }}>
         <TagsPageSize />
         <TagsOrder />
         <TagsSort />

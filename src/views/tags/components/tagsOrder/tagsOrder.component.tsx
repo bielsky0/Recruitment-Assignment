@@ -13,7 +13,11 @@ export const TagsOrder = () => {
   const { order, updateOrder } = useTagsFilter();
 
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box
+      sx={{
+        width: { xs: "100%", md: "100px" },
+      }}
+    >
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Order</InputLabel>
         <Select

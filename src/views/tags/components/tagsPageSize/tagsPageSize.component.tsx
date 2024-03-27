@@ -10,7 +10,7 @@ export const TagsPageSize = () => {
       id="input-with-icon-textfield"
       label="Page Size"
       sx={{
-        maxWidth: "100px",
+        maxWidth: { xs: "100%", md: "100px" },
       }}
       type="number"
       variant="outlined"
@@ -20,7 +20,10 @@ export const TagsPageSize = () => {
       }}
       InputProps={{
         startAdornment: (
-          <InputAdornment position="start">
+          <InputAdornment
+            sx={{ display: { xs: "none", md: "flex" } }}
+            position="start"
+          >
             <AutoStoriesIcon />
           </InputAdornment>
         ),

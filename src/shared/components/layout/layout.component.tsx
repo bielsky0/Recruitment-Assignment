@@ -30,12 +30,13 @@ export const Layout = ({ children }: LayoutProps) => {
             >
               <Logo />
               <Typography
-                variant="h5"
+                variant="h1"
                 noWrap
                 sx={{
                   mr: 2,
                   flexGrow: 1,
                   fontFamily: "monospace",
+                  fontSize: 26,
                   fontWeight: 700,
                   color: "black",
                   textDecoration: "none",
@@ -46,31 +47,20 @@ export const Layout = ({ children }: LayoutProps) => {
             </Box>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                open={false}
-                id="menu-appbar"
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
+              <Typography
+                variant="h1"
                 sx={{
-                  display: { xs: "block", md: "none" },
+                  mr: 2,
+                  flexGrow: 1,
+                  fontFamily: "monospace",
+                  fontSize: 16,
+                  fontWeight: 700,
+                  color: "black",
+                  textDecoration: "none",
                 }}
-              ></Menu>
+              >
+                Recruitment Assignment by Jakub Bielski
+              </Typography>
             </Box>
             <Box
               sx={{

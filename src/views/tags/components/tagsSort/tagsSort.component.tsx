@@ -13,7 +13,7 @@ export const TagsSort = () => {
   const { sort, updateSort } = useTagsFilter();
 
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box sx={{ width: { xs: "100%", md: "100px" } }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Sort</InputLabel>
         <Select

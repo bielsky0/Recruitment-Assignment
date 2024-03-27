@@ -16,7 +16,7 @@ export const TagsSearchbox = () => {
       id="input-with-icon-textfield"
       label="Search by Tag Name"
       sx={{
-        maxWidth: "350px",
+        maxWidth: { xs: "100%", md: "350px" },
       }}
       value={value}
       onChange={(event) => {
