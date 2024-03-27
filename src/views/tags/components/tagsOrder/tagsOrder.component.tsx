@@ -6,10 +6,11 @@ import {
   Select,
   SelectChangeEvent,
 } from "@mui/material";
-import { useState } from "react";
+import { useTagsFilter } from "../../../../shared/hooks/useTagsFilter";
+import { Order } from "../../../../contexts/tagsFilter/tagsFilter.types";
 
 export const TagsOrder = () => {
-  const [value, setValue] = useState("Ascending");
+  const { order, updateOrder } = useTagsFilter();
 
   return (
     <Box sx={{ minWidth: 120 }}>
@@ -18,14 +19,14 @@ export const TagsOrder = () => {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={value}
+          value={order}
           label="Order"
           onChange={(v: SelectChangeEvent) => {
-            setValue(v.target.value);
+            updateOrder(v.target.value as Order);
           }}
         >
-          <MenuItem value="Ascending">Ascending</MenuItem>
-          <MenuItem value="Descending">Descending</MenuItem>
+          <MenuItem value={Order.ascending}>Ascending</MenuItem>
+          <MenuItem value={Order.descending}>Descending</MenuItem>
         </Select>
       </FormControl>
     </Box>

@@ -17,3 +17,11 @@ export type Tag = {
 };
 
 export type UncheckedTag = Record<string, unknown>;
+
+export type TagsParams = {
+  inname: string;
+  order: string;
+  sort: string;
+  page: string;
+  pagesize: string;
+};

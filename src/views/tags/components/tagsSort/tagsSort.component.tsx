@@ -6,10 +6,11 @@ import {
   Select,
   SelectChangeEvent,
 } from "@mui/material";
-import { useState } from "react";
+import { useTagsFilter } from "../../../../shared/hooks/useTagsFilter";
+import { Sort } from "../../../../contexts/tagsFilter/tagsFilter.types";
 
 export const TagsSort = () => {
-  const [value, setValue] = useState("Popular");
+  const { sort, updateSort } = useTagsFilter();
 
   return (
     <Box sx={{ minWidth: 120 }}>
@@ -18,15 +19,15 @@ export const TagsSort = () => {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={value}
+          value={sort}
           label="Sort"
           onChange={(v: SelectChangeEvent) => {
-            setValue(v.target.value);
+            updateSort(v.target.value as Sort);
           }}
         >
-          <MenuItem value="Popular">Popular</MenuItem>
-          <MenuItem value="Activity">Activity</MenuItem>
-          <MenuItem value="Name">Name</MenuItem>
+          <MenuItem value={Sort.popular}>Popular</MenuItem>
+          <MenuItem value={Sort.activity}>Activity</MenuItem>
+          <MenuItem value={Sort.name}>Name</MenuItem>
         </Select>
       </FormControl>
     </Box>

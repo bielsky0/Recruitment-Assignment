@@ -1,6 +1,6 @@
 export enum Order {
-  descending = "descending",
-  ascending = "ascending",
+  descending = "desc",
+  ascending = "asc",
 }
 
 export enum Sort {

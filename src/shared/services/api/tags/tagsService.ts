@@ -1,17 +1,17 @@
 import { axiosClient } from "../../httpService";
-import { UncheckedTag, Tag } from "./types";
+import { UncheckedTag, Tag, TagsParams } from "./types";
 
 export class TagsService {
   public async getTags(
-    page: number
+    params: TagsParams
   ): Promise<{ items: Tag[]; hasMore: boolean }> {
     try {
       const response = await axiosClient.get<{
         items: Tag[];
         has_more: boolean;
-      }>(
-        `tags?page=${page}&pagesize=8&order=desc&sort=popular&site=stackoverflow&key=rzL)B9GRLKBp8vQsT4vmag((`
-      );
+      }>(`tags?site=stackoverflow&key=rzL)B9GRLKBp8vQsT4vmag((`, {
+        ...params,
+      });
 
       const requiredFields = ["count", "name"];
 

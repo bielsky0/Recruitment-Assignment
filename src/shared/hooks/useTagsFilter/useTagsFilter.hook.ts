@@ -39,14 +39,17 @@ export const useTagsFilter = () => {
 
   const updatePage = useCallback(
     (newPage: number) => {
-      dispatch({ type: ReducerActions.updateSearch, payload: { newPage } });
+      dispatch({ type: ReducerActions.updatePage, payload: { newPage } });
     },
     [dispatch]
   );
 
   const updatePageSize = useCallback(
     (newPageSize: number) => {
-      dispatch({ type: ReducerActions.updateSearch, payload: { newPageSize } });
+      dispatch({
+        type: ReducerActions.updatePageSize,
+        payload: { newPageSize },
+      });
     },
     [dispatch]
   );
