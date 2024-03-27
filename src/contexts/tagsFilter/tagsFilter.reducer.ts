@@ -11,7 +11,7 @@ export const INITIAL_STATE: TagsFiltersState = {
   page: 1,
   pageSize: 8,
   sort: Sort.popular,
-  order: Order.ascending,
+  order: Order.descending,
 };
 
 export const reducer = (

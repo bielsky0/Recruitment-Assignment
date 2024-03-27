@@ -4,6 +4,7 @@ import { useTagsFilter } from "../../../../shared/hooks/useTagsFilter";
 
 export const TagsPageSize = () => {
   const { pageSize, updatePageSize } = useTagsFilter();
+
   return (
     <TextField
       id="input-with-icon-textfield"
