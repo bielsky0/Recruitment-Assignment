@@ -7,7 +7,7 @@ import { TableCell, TableRow } from "@mui/material";
 
 export const TagsTable = () => {
   const { search, order, sort, page, pageSize } = useTagsFilter();
-  const { data, isFetching, error } = useTagsQuery({
+  const { data, isFetching, error, customError } = useTagsQuery({
     inname: search,
     order: order.toString(),
     sort: sort.toString(),
@@ -15,11 +15,11 @@ export const TagsTable = () => {
     pagesize: pageSize.toString(),
   });
 
-  if (error)
+  if (error || customError)
     return (
       <EmptyTable
         headers={TABLE_HEADERS}
-        message="Something went wrong, refresh page"
+        message={`Something went wrong, ${customError ? customError.message : ""} `}
         severity="error"
       />
     );

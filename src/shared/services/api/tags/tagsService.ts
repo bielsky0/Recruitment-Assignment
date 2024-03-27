@@ -1,5 +1,12 @@
+import { AxiosError } from "axios";
 import { removeFields } from "../../../utils";
 import { axiosClient } from "../../httpService";
+import {
+  FieldValidationError,
+  FieldValidationErrorCodes,
+  TagsApiError,
+  TagsApiErrorCodes,
+} from "./tags.errors";
 import { UncheckedTag, Tag, TagsParams } from "./types";
 
 export class TagsService {
@@ -20,7 +27,10 @@ export class TagsService {
       response.items.forEach((uncheckedTag: UncheckedTag) => {
         requiredFields.forEach((field) => {
           if (uncheckedTag[field] === undefined)
-            throw new Error(`No ${field} field`);
+            throw new FieldValidationError(
+              `No ${field} field`,
+              FieldValidationErrorCodes.SomethingWentWrong
+            );
         });
       });
 
@@ -35,7 +45,25 @@ export class TagsService {
         hasMore: response.has_more,
       };
     } catch (error) {
-      throw new Error(`Error while fetching tags ${error}`);
+      if (error instanceof AxiosError) {
+        const data = error.response?.data;
+        if (data.error_name === "bad_parameter" && data.error_message)
+          throw new TagsApiError(
+            `Bad Parameter for ${data.error_message}`,
+            TagsApiErrorCodes.BadParameter
+          );
+
+        if (data.error_name === "throttle_violation" && data.error_message)
+          throw new TagsApiError(
+            data.error_message,
+            TagsApiErrorCodes.ThrottleViolation
+          );
+      }
+
+      throw new TagsApiError(
+        `Error while fetching tags ${error}`,
+        TagsApiErrorCodes.Generic
+      );
     }
   }
 }

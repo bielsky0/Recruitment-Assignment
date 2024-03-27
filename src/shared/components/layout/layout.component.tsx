@@ -41,7 +41,7 @@ export const Layout = ({ children }: LayoutProps) => {
                   textDecoration: "none",
                 }}
               >
-                Recruitment Assignment Jakub Bielski
+                Recruitment Assignment by Jakub Bielski
               </Typography>
             </Box>
 
