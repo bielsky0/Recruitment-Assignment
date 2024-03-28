@@ -1,5 +1,5 @@
 <div align="center">
-	<h3>Mediporta - recruitment task</h1>
+	<h3>Recruitment-Assignment</h1>
 	<p>The user interface of the tag browser provided by the
 		<a href="https://api.stackexchange.com/docs">StackOverflow API</a> using React.
 	</p>
@@ -12,8 +12,8 @@
 ## Getting started
 
 ```bash
-git clone https://github.com/bylski9/mediporta.git
-cd mediporta
+git clone https://github.com/bylski9/Recruitment-Assignment.git
+cd Recruitment-Assignment
 npm ci
 npm start
 ```
