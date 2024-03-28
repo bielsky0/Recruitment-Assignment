@@ -27,7 +27,9 @@ export const Pagination = ({
       >
         <ArrowBackIcon />
       </IconButton>
-      <Typography component="span">{currentPage}</Typography>
+      <Typography component="span" data-testid="current-page">
+        {currentPage}
+      </Typography>
       <IconButton
         disabled={!isNextDisabled}
         onClick={() => {

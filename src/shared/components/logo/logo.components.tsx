@@ -5,6 +5,7 @@ export const Logo = () => {
   return (
     <Box
       component="img"
+      data-testid="test-logo"
       sx={{
         width: 90,
         maxWidth: { xs: 70, md: 90 },
