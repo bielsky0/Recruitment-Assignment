@@ -1,10 +1,10 @@
-import React from "react";
 import { createRoot } from "react-dom/client";
 import { CssBaseline } from "@mui/material";
 
 import { App } from "src/app";
 import { ReactQueryProvider } from "src/app/providers";
 import { TagsFilterProvider } from "src/contexts";
+import { StrictMode } from "react";
 
 const render = () => {
   const container = document.getElementById("root");
@@ -13,14 +13,14 @@ const render = () => {
   const root = createRoot(container!);
 
   root.render(
-    <React.StrictMode>
+    <StrictMode>
       <ReactQueryProvider>
         <TagsFilterProvider>
           <CssBaseline />
           <App />
         </TagsFilterProvider>
       </ReactQueryProvider>
-    </React.StrictMode>
+    </StrictMode>
   );
 };
 
