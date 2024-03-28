@@ -2,7 +2,7 @@ import { Component, ErrorInfo, ReactNode } from "react";
 import { logger } from "src/shared/services";
 import { Alert } from "@mui/material";
 
-interface Props {
+export interface ErrorBoundaryProps {
   children?: ReactNode;
 }
 
@@ -10,13 +10,12 @@ interface State {
   hasError: boolean;
 }
 
-export class ErrorBoundary extends Component<Props, State> {
+export class ErrorBoundary extends Component<ErrorBoundaryProps, State> {
   public state: State = {
     hasError: false,
   };
 
   public static getDerivedStateFromError(_: Error): State {
-    // Update state so the next render will show the fallback UI.
     return { hasError: true };
   }
 

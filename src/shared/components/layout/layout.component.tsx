@@ -1,13 +1,4 @@
-import {
-  AppBar,
-  Box,
-  Container,
-  IconButton,
-  Menu,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { AppBar, Box, Container, Toolbar, Typography } from "@mui/material";
 
 import { Logo } from "src/shared/components/logo";
 
