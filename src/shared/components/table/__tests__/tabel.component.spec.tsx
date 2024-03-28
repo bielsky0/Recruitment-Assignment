@@ -27,7 +27,7 @@ describe("Table: Component", () => {
   );
   const render = makeContextRenderer(component);
 
-  it("Should display", () => {
+  it("Should display items correctly", () => {
     render({ items: [{ name: "test", count: 1 }] });
     expect(screen.getByText("test")).toBeInTheDocument();
     expect(screen.getByText("1")).toBeInTheDocument();

@@ -21,7 +21,9 @@ export const makeContextRenderer = <T extends unknown>(
 ) => {
   return (props?: T) => {
     return render(component(props ?? {}), {
-      wrapper: ({ children }) => <ProviderWrapper>{children}</ProviderWrapper>,
+      wrapper: ({ children }: ProvidersWrapperProps) => (
+        <ProviderWrapper>{children}</ProviderWrapper>
+      ),
     });
   };
 };

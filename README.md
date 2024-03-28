@@ -7,13 +7,13 @@
 
 ## Prerequisites
 
-- [Node.js 20+](https://nodejs.org/en)
+- [Node.js 20.11.1](https://nodejs.org/en)
 
 ## Getting started
 
 ```bash
-git clone https://github.com/bylski9/mediporta-recruitment-task.git
-cd mediporta-recruitment-task
+git clone https://github.com/bylski9/mediporta.git
+cd mediporta
 npm ci
 npm start
 ```
