@@ -18,7 +18,7 @@ export class TagsService {
       const response = await axiosClient.get<{
         items: Tag[];
         has_more: boolean;
-      }>(`tags?site=stackoverflow&key=rzL)B9GRLKBp8vQsT4vmag((`, {
+      }>(`tags?site=stackoverflow&key=V1nVLPvURKYK4OoV6Kv4XQ((`, {
         ...params,
       });
 
